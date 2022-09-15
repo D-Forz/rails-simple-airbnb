@@ -2,11 +2,14 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: %i[show edit update destroy]
 
   def index
-    @flats = if params[:search].present?
-               Flat.select { |_id, flat| flat[:name].downcase.include?(params[:search].downcase) }
+    @flats = if params[:query].present?
+               Flat.where("name LIKE ?", "%#{params[:query]}%")
+              # Flat.where('lower(name) = ?', params[:query].downcase)
+              # Flat.where(name: params[:query])
              else
                Flat.all
              end
+
     # @flats = Flat.all
   end
 
