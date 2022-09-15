@@ -1,0 +1,46 @@
+<div class="container m-3">
+    <div class="map">
+    </div>
+    <div class="container margin-top-negative">
+      <div class="row">
+        <div class="col-8">
+          <div class="flat-show-card">
+            <h2><%= @flat.name %></h2>
+          </div>
+          <div class="flat-show-card">
+            <p><%= @flat.description %></p>
+            <img src="https://loremflickr.com/400/250" alt="">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="flat-show-card">
+            <h3>Book this place!</h3>
+            <form action="">
+          <div class="input-group">
+            <span class="input-group-text" id="start-date-label">From:</span>
+            <input type="text" class="form-control" placeholder="12/10/2017" aria-label="start-date" aria-describedby="start-date-label">
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-text" id="end-date-label">To:</span>
+            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="end-date" aria-describedby="start-date-label">
+          </div>
+          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
+        </form>
+          </div>
+          <div class="flat-show-card">
+            <h3>Details</h3>
+              <p class="list-inline">👨‍👩‍👦 <%= @flat.number_of_guests %> 💰 <%= @flat.price_per_night %></p>
+
+            </ul>
+          </div>
+          <div class="flat-show-card list-inline text-center">
+            <p class="list-inline-item">Share</p>
+            <i class="fa-brands fa-facebook-square me-2 list-inline-item"></i>
+            <i class="fa-brands fa-twitter-square me-2 list-inline-item"></i>
+            <i class="fa-brands fa-pinterest-square me-2 list-inline-item"></i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>

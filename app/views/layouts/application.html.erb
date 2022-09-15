@@ -13,6 +13,16 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid d-flex bd-highlight">
+        <%= link_to "Simple Airbnb", root_path, class: "navbar-brand p-2 flex-grow-1 bd-highlight" %>
+        <form class="d-flex">
+          <input class="form-control m-1" type="search" placeholder="Search" aria-label="Search">
+          <%= link_to "Search", flats_path, class: "btn btn-outline-success m-1" %>
+        </form>
+        <%= link_to "Add Flat", new_flat_path, class: "btn btn-outline-primary m-2" %>
+      </div>
+    </nav>
     <div class="container">
       <%= yield %>
     </div>

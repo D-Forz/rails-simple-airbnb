@@ -1,0 +1,26 @@
+<div class="container m-3">
+  <h1 class="text-center">Flats(<%= @flats.count %>)</h1>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <% @flats.each do |flat| %>
+    <div class="col">
+      <div class="card h-100">
+        <img src="https://loremflickr.com/400/250" class="card-img-top rounded mx-auto d-block" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">🚩 <%= flat.address %></li>
+          <li class="list-group-item">👨‍👩‍👦 <%= flat.number_of_guests %></li>
+        </ul>
+        <div class="card-footer">
+          <small class="text-muted">
+            <%= link_to 'More info', flat_path(flat), class: "m-2 link-primary" %>
+            <%= link_to 'Edit', edit_flat_path(flat), class: "m-2 link-warning" %>
+            <%= link_to 'Delete', flat_path(flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "m-2 link-danger" %>
+          </small>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
