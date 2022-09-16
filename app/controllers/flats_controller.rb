@@ -3,9 +3,9 @@ class FlatsController < ApplicationController
 
   def index
     @flats = if params[:query].present?
-               Flat.where("name LIKE ?", "%#{params[:query]}%")
-              # Flat.where('lower(name) = ?', params[:query].downcase)
-              # Flat.where(name: params[:query])
+               Flat.where('name LIKE ?', "%#{params[:query]}%")
+               # Flat.where('lower(name) = ?', params[:query].downcase)
+               # Flat.where(name: params[:query])
              else
                Flat.all
              end
